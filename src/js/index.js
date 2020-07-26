@@ -29,7 +29,7 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
-  //-----Nombre------
+  //-----Nombre---------
   let fname = `${variables.name}`;
   let lname = `${variables.lastname}`;
   let fullName = "";
@@ -38,7 +38,7 @@ function render(variables = {}) {
   else fullName = fname + " " + lname;
   //--------------------
 
-  //-----Cargo----
+  //-----Cargo----------
   let prole = `${variables.role}`;
   if (variables.role == null) prole = "Unemployed";
   //--------------------
