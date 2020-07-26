@@ -29,18 +29,46 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  //-----Nombre------
+  let fname = `${variables.name}`;
+  let lname = `${variables.lastname}`;
+  let fullName = "";
+  if (variables.name == null || variables.lastname == null)
+    fullName = "WriteYourName";
+  else fullName = fname + " " + lname;
+  //--------------------
+
+  //-----Cargo----
+  let prole = `${variables.role}`;
+  if (variables.role == null) prole = "Unemployed";
+  //--------------------
+
+  //-----Ciudad, Pais----
+  let pcity = `${variables.city}`;
+  let pcountry = `${variables.country}`;
+  var address = "";
+
+  if (variables.city == null || variables.country == null) address = "";
+  else address = pcity + "," + pcountry;
+  //---------------------------
+
+  //-------SMPosition----
+  let smp = `${variables.socialMediaPosition}`;
+  if (variables.socialMediaPosition == null) smp = "position-left";
+  //---------------------
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${fullName}</h1>
+          <h2>${prole}</h2>
+          <h3>${address}</h3>
+          <ul class="${smp}">
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
