@@ -91,104 +91,9 @@
   !*** ./node_modules/css-loader!./node_modules/sass-loader/dist/cjs.js!./src/style/index.scss ***!
   \***********************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-exports.push([module.i, "@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);", ""]);
-
-// module
-exports.push([module.i, ".filters {\n  background: white;\n  width: 100%; }\n  .filters li {\n    display: inline-block;\n    max-width: 80px;\n    padding: 3px; }\n    .filters li label {\n      display: block;\n      font-size: 12px;\n      font-weight: 900; }\n    .filters li input {\n      width: 100%; }\n    .filters li select {\n      width: 100%; }\n\n.widget {\n  position: relative;\n  width: 300px;\n  height: 350px;\n  margin: 50px auto;\n  background: #fff;\n  border-radius: 5px;\n  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); }\n  .widget .cover {\n    height: 160px;\n    overflow: hidden; }\n    .widget .cover img {\n      width: 100%;\n      height: auto;\n      min-height: 160px;\n      border-radius: 4px 4px 0 0; }\n  .widget .photo {\n    position: absolute;\n    top: 85px;\n    left: 50%;\n    width: 100px;\n    height: 100px;\n    margin: 0 0 0 -55px;\n    border: 5px solid #fff;\n    border-radius: 50%; }\n  .widget h1,\n  .widget h2,\n  .widget h3 {\n    display: block;\n    margin: 10px 0;\n    text-align: center;\n    font-family: \"Open Sans\", sans-serif;\n    font-size: 16px;\n    font-weight: 300;\n    color: #999; }\n  .widget h1 {\n    margin: 60px 0 20px;\n    font-size: 26px;\n    color: #000; }\n  .widget h3 {\n    font-size: 12px; }\n  .widget ul {\n    position: absolute;\n    top: 20px;\n    padding: 0;\n    background: #2cdfd3; }\n    .widget ul.position-left {\n      left: -26px; }\n    .widget ul.position-right {\n      right: -27px; }\n    .widget ul li {\n      list-style: none; }\n      .widget ul li a {\n        display: block;\n        padding: 5px 6px;\n        color: #fff;\n        cursor: pointer;\n        text-align: center;\n        border-bottom: 1px solid #2cd5ca;\n        transition: background-color 0.3s; }\n      .widget ul li:hover > a {\n        background-color: #2cd5ca; }\n      .widget ul li:first-child > a {\n        border-radius: 0 3px 0 0; }\n      .widget ul li:last-child > a {\n        border: none;\n        border-radius: 0 0 3px 0; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/lib/css-base.js":
-/*!*************************************************!*\
-  !*** ./node_modules/css-loader/lib/css-base.js ***!
-  \*************************************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
+throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nError: Missing binding C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\node-sass\\vendor\\win32-x64-72\\binding.node\nNode Sass could not find a binding for your current environment: Windows 64-bit with Node.js 12.x\n\nFound bindings for the following environments:\n  - Linux 64-bit with Node.js 12.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass` to download the binding for your current environment.\n    at module.exports (C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\node-sass\\lib\\binding.js:15:13)\n    at Object.<anonymous> (C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\node-sass\\lib\\index.js:14:35)\n    at Module._compile (C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\v8-compile-cache\\v8-compile-cache.js:192:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1157:10)\n    at Module.load (internal/modules/cjs/loader.js:985:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:878:14)\n    at Module.require (internal/modules/cjs/loader.js:1025:19)\n    at require (C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\v8-compile-cache\\v8-compile-cache.js:161:20)\n    at getDefaultSassImpl (C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\sass-loader\\dist\\index.js:198:10)\n    at Object.loader (C:\\Users\\paguirre\\Pictures\\FrontEnd\\conditional-profile-card-generator\\exercise-conditional-profile-card-1\\node_modules\\sass-loader\\dist\\index.js:80:29)");
 
 /***/ }),
 
@@ -699,25 +604,69 @@ __webpack_require__.r(__webpack_exports__);
 /**
  *  EDIT ONLY INSIDE THIS RENDER FUNCTION
  *  This function is called every time the user changes types or changes any input
+ * 
+    {
+        includeCover: true, // if includeCover is true the algorithm should
+        background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da", // this is the url of the image that will used as background for the profile cover
+        avatarURL: "https://randomuser.me/api/portraits/women/42.jpg", // this is the url for the profile avatar
+        socialMediaPosition: "left", // social media bar position (left or right)
+        
+        twitter: null, // social media usernames
+        github: "alesanchezr",
+        linkedin: null,
+        instagram: null,
+
+        name: null,
+        lastname: null,
+        role: null,
+        country: null,
+        city: null
+    }
  */
 function render(variables = {}) {
+  console.log("These are the current variables: ", variables); //print on the console
   // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  //-----Nombre---------
+  let fname = `${variables.name}`;
+  let lname = `${variables.lastname}`;
+  let fullName = "";
+  if (variables.name == null || variables.lastname == null) fullName = "WriteYourName";else fullName = fname + " " + lname;
+  //--------------------
+
+  //-----Cargo----------
+  let prole = `${variables.role}`;
+  if (variables.role == null) prole = "Unemployed";
+  //--------------------
+
+  //-----Ciudad, Pais----
+  let pcity = `${variables.city}`;
+  let pcountry = `${variables.country}`;
+  var address = "";
+
+  if (variables.city == null || variables.country == null) address = "";else address = pcity + "," + pcountry;
+  //---------------------------
+
+  //-------SMPosition----
+  let smp = `${variables.socialMediaPosition}`;
+  if (variables.socialMediaPosition == null) smp = "position-left";
+  //---------------------
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name || 'Empty name'}</h1>
-          <h2>${variables.role || 'Empty Role'}</h2>
-          <h3>${variables.city || ''}, ${variables.country || ''}</h3>
-          <ul class="${variables.socialMediaPosition}">
-            ${variables.twitter && `<li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>`}
-            ${variables.github && `<li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>`}
-            ${variables.linkedin && `<li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>`}
-            ${variables.instagram && `<li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>`}
+          <h1>${fullName}</h1>
+          <h2>${prole}</h2>
+          <h3>${address}</h3>
+          <ul class="${smp}">
+            <li><a href="https://twitter.com/${variables.twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
@@ -735,7 +684,7 @@ window.onload = function () {
     // this is the url for the profile avatar
     avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
     // social media bar position (left or right)
-    socialMediaPosition: "left",
+    socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
     github: "alesanchezr",
@@ -747,13 +696,15 @@ window.onload = function () {
     country: null,
     city: null
   };
-  render(window.variables);
+  render(window.variables); //render the card for the first time
+
   document.querySelectorAll(".picker").forEach(function (elm) {
     elm.addEventListener("change", function (e) {
-      const attribute = e.target.getAttribute("for");
+      // <- add a listener to every input
+      const attribute = e.target.getAttribute("for"); // when any input changes, collect the value
       let values = {};
-      values[attribute] = this.value == "" ? null : this.value == "true" ? true : this.value == "false" ? false : this.value;
-      render(Object.assign(window.variables, values));
+      values[attribute] = this.value == "" || this.value == "null" ? null : this.value == "true" ? true : this.value == "false" ? false : this.value;
+      render(Object.assign(window.variables, values)); // render again the card with new valus
     });
   });
 };
